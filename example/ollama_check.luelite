@@ -1,0 +1,12 @@
+print("=== Ollama Check ===\n")
+
+-- http.get: direct HTTP request (without external libraries)
+local response, err = http.get("http://localhost:11434/api/tags")
+
+if response then
+    print("Ollama is running!")
+    print("Response: " .. response:sub(1, 150) .. "...")
+else
+    print("Ollama not available")
+    print("Make sure Ollama is installed and running")
+end

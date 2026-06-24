@@ -1,0 +1,17 @@
+print("=== Health Bar ===\n")
+
+local function getHealthStatus(hp)
+    return match(hp, {
+        [_lt(0)] = "DEAD",
+        [0] = "DEAD",
+        [_between(1, 20)] = "CRITICAL",
+        [_between(21, 50)] = "WOUNDED",
+        [_between(51, 80)] = "FINE",
+        [_default()] = "PERFECT"
+    })
+end
+
+local healthValues = {100, 75, 45, 15, 0, -5}
+for _, hp in ipairs(healthValues) do
+    print("HP: " .. string.format("%3d", hp) .. " -> " .. getHealthStatus(hp))
+end

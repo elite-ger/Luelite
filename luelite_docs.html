@@ -1,0 +1,733 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Luelite 0.1 - Documentation</title>
+    <style>
+        body {
+            background-color: #C0C0C0;
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 12px;
+            color: #000000;
+        }
+
+        table.main {
+            width: 760px;
+            margin: 20px auto;
+            border: 2px solid #808080;
+            background-color: #FFFFFF;
+            border-collapse: collapse;
+        }
+
+        td.header {
+            background-color: #000080;
+            color: #FFFFFF;
+            padding: 8px 12px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #808080;
+        }
+
+        td.subheader {
+            background-color: #000080;
+            color: #FFFF00;
+            padding: 4px 12px;
+            font-size: 11px;
+            border-bottom: 2px solid #808080;
+        }
+
+        td.nav {
+            background-color: #D4D0C8;
+            padding: 8px 12px;
+            border-bottom: 1px solid #808080;
+            font-size: 11px;
+        }
+
+        td.nav a {
+            color: #000080;
+            font-weight: bold;
+        }
+
+        td.nav a:visited {
+            color: #800080;
+        }
+
+        td.content {
+            padding: 16px;
+            vertical-align: top;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 16px;
+            color: #000080;
+            border-bottom: 1px solid #C0C0C0;
+            padding-bottom: 4px;
+            margin: 0 0 12px 0;
+        }
+
+        h2 {
+            font-size: 14px;
+            color: #000080;
+            margin: 20px 0 8px 0;
+            padding: 2px 0;
+            border-bottom: 1px dotted #C0C0C0;
+        }
+
+        h3 {
+            font-size: 12px;
+            color: #000000;
+            margin: 16px 0 6px 0;
+        }
+
+        pre {
+            background-color: #F5F5F5;
+            border: 1px solid #C0C0C0;
+            padding: 10px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 11px;
+            overflow-x: auto;
+            color: #000000;
+        }
+
+        code {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 11px;
+            background-color: #F0F0F0;
+            padding: 1px 3px;
+        }
+
+        table.features {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        table.features th {
+            background-color: #000080;
+            color: #FFFFFF;
+            padding: 4px 8px;
+            font-size: 11px;
+            text-align: left;
+        }
+
+        table.features td {
+            border: 1px solid #C0C0C0;
+            padding: 4px 8px;
+            font-size: 11px;
+        }
+
+        table.features tr.alt {
+            background-color: #F0F0F0;
+        }
+
+        .status-ok {
+            color: #008000;
+            font-weight: bold;
+        }
+
+        .status-todo {
+            color: #808000;
+            font-weight: bold;
+        }
+
+        .note {
+            background-color: #FFFFCC;
+            border: 1px solid #CCCC00;
+            padding: 8px 12px;
+            margin: 10px 0;
+            font-size: 11px;
+        }
+
+        .warning {
+            background-color: #FFCCCC;
+            border: 1px solid #CC0000;
+            padding: 8px 12px;
+            margin: 10px 0;
+            font-size: 11px;
+        }
+
+        td.footer {
+            background-color: #D4D0C8;
+            padding: 6px 12px;
+            font-size: 10px;
+            text-align: center;
+            border-top: 2px solid #808080;
+            color: #404040;
+        }
+
+        .badge {
+            background-color: #000080;
+            color: #FFFFFF;
+            padding: 1px 5px;
+            font-size: 10px;
+            font-weight: bold;
+        }
+
+        a {
+            color: #0000CC;
+        }
+
+        a:visited {
+            color: #800080;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #C0C0C0;
+            margin: 16px 0;
+        }
+
+        .marquee {
+            color: #FFFF00;
+            font-weight: normal;
+        }
+
+        img.icon {
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table class="main" cellpadding="0" cellspacing="0">
+        <!-- HEADER -->
+        <tr>
+            <td class="header">
+                <img src="https://web.archive.org/web/20090829083707im_/http://www.geocities.com/shanewomer/transparent_fire_font_21.gif"
+                    alt="fire" class="icon" width="21" height="21">
+                Luelite 0.1 Documentation
+            </td>
+        </tr>
+        <tr>
+            <td class="subheader">
+                <marquee class="marquee" scrollamount="3" width="400">
+                    <img src="https://blob.gifcities.org/gifcities/3CAAM2NSG3HYIXQFC2T2ZAZWFOGFSAEO.gif" alt="*"
+                        width="14" height="14">
+                    A Lua 5.5 fork for retro game development &bull; By Elite &bull; Part of the Retrelite ecosystem
+                    <img src="https://blob.gifcities.org/gifcities/3CAAM2NSG3HYIXQFC2T2ZAZWFOGFSAEO.gif" alt="*"
+                        width="14" height="14">
+                </marquee>
+            </td>
+        </tr>
+
+        <!-- NAVIGATION -->
+        <tr>
+            <td class="nav">
+                <a href="#about">About</a> |
+                <a href="#features">Features</a> |
+                <a href="#install">Install</a> |
+                <a href="#multitask">Multitasking</a> |
+                <a href="#match">Match</a> |
+                <a href="#http">HTTP</a> |
+                <a href="#ecosystem">Ecosystem</a> |
+                <a href="#changelog">Changelog</a>
+            </td>
+        </tr>
+
+        <!-- CONTENT -->
+        <tr>
+            <td class="content">
+
+                <!-- ============================================================ -->
+                <h1 id="about">1. About Luelite</h1>
+
+                <p><b>Luelite</b> is a custom fork of <b>Lua 5.5.0</b>, designed specifically for the <b>Retrelite</b>
+                    game engine.
+                    It combines the simplicity of Lua with unique features for game development and local AI
+                    integration.</p>
+
+                <p>
+                    <span class="badge">Version</span> 0.1.0 (Prototype)<br>
+                    <span class="badge">Based on</span> Lua 5.5.0<br>
+                    <span class="badge">Author</span> Elite<br>
+                    <span class="badge">License</span> MIT
+                </p>
+
+                <div class="note">
+                    <b>Note:</b> Luelite is currently in prototype stage. Some features are marked as <span
+                        class="status-todo">TODO</span>
+                    and will be implemented in future versions.
+                </div>
+
+                <!-- ============================================================ -->
+                <h1 id="features">2. Features Overview</h1>
+
+                <table class="features">
+                    <tr>
+                        <th width="180">Feature</th>
+                        <th width="80">Status</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td><code>wait(seconds)</code></td>
+                        <td class="status-ok">DONE</td>
+                        <td>Yields current coroutine for N seconds. Default: 1/30s.</td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>spawn(function)</code></td>
+                        <td class="status-ok">DONE</td>
+                        <td>Runs function in a new coroutine. Non-blocking.</td>
+                    </tr>
+                    <tr>
+                        <td><code>delay(seconds, function)</code></td>
+                        <td class="status-ok">DONE</td>
+                        <td>Calls function after N seconds. Implemented in Lua.</td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>tick()</code></td>
+                        <td class="status-ok">DONE</td>
+                        <td>Returns global engine time in seconds.</td>
+                    </tr>
+                    <tr>
+                        <td><code>match(value, {})</code></td>
+                        <td class="status-ok">DONE</td>
+                        <td>Pattern matching. Cleaner than if/elseif chains.</td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>http.get(url)</code></td>
+                        <td class="status-ok">DONE</td>
+                        <td>HTTP GET requests. Direct access to localhost APIs.</td>
+                    </tr>
+                    <tr>
+                        <td><code>http.post(url, body)</code></td>
+                        <td class="status-todo">TODO</td>
+                        <td>HTTP POST for Ollama API integration.</td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>vector3</code></td>
+                        <td class="status-todo">TODO</td>
+                        <td>3D vector type with operators.</td>
+                    </tr>
+                    <tr>
+                        <td><code>signal</code></td>
+                        <td class="status-todo">TODO</td>
+                        <td>Event system for game objects.</td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>print_r()</code></td>
+                        <td class="status-todo">TODO</td>
+                        <td>Recursive table printer for debugging.</td>
+                    </tr>
+                </table>
+
+                <!-- ============================================================ -->
+                <h1 id="install">3. Installation &amp; Usage</h1>
+
+                <h2>3.1 Building from Source</h2>
+
+                <pre>
+git clone https://github.com/yourname/luelite.git
+cd luelite
+mkdir build &amp;&amp; cd build
+cmake .. -G "MinGW Makefiles"
+make
+</pre>
+
+                <h2>3.2 Adding to PATH</h2>
+
+                <p>Copy <code>luelite.exe</code> to a folder in your PATH (e.g. <code>C:\Users\You\retrelite\</code>).
+                </p>
+
+                <h2>3.3 Running Scripts</h2>
+
+                <pre>
+luelite myscript.lua
+luelite myscript.luelite
+</pre>
+
+                <p>Supported extensions: <code>.lua</code> and <code>.luelite</code></p>
+
+                <h2>3.4 File Association (Windows)</h2>
+
+                <p>Run <code>associate_luelite.bat</code> as Administrator to associate <code>.luelite</code> files with
+                    Luelite.</p>
+
+                <!-- ============================================================ -->
+                <h1 id="multitask">4. Multitasking</h1>
+
+                <p>Luelite supports cooperative multitasking through coroutines. This allows multiple scripts to run
+                    "simultaneously"
+                    without blocking each other.</p>
+
+                <h2>4.1 wait()</h2>
+
+                <pre>
+<span style="color:#808080;">-- Yields for 0.5 seconds</span>
+wait(0.5)
+print("Half a second passed!")
+</pre>
+
+                <h2>4.2 spawn()</h2>
+
+                <pre>
+<span style="color:#808080;">-- Runs in background</span>
+spawn(function()
+    for i = 1, 5 do
+        print("[BG] " .. i)
+        wait(0.3)
+    end
+end)
+
+<span style="color:#808080;">-- Main thread continues immediately</span>
+print("[Main] Doing other work...")
+wait(2)
+print("[Main] Done!")
+</pre>
+
+                <p><b>Output:</b></p>
+                <pre>
+[Main] Doing other work...
+[BG] 1
+[BG] 2
+[BG] 3
+[BG] 4
+[BG] 5
+[Main] Done!
+</pre>
+
+                <h2>4.3 delay()</h2>
+
+                <pre>
+delay(1.0, function()
+    print("1 second delayed message")
+end)
+
+delay(0.2, function()
+    print("0.2 second delayed message")
+end)
+
+wait(1.5)
+</pre>
+
+                <p><b>Output:</b></p>
+                <pre>
+0.2 second delayed message
+1 second delayed message
+</pre>
+
+                <h2>4.4 tick()</h2>
+
+                <pre>
+print("Start time: " .. tick())
+wait(1)
+print("Current time: " .. tick())
+print("Elapsed: ~1 second")
+</pre>
+
+                <!-- ============================================================ -->
+                <h1 id="match">5. Pattern Matching (match)</h1>
+
+                <p><code>match</code> is a powerful replacement for long <code>if/elseif/else</code> chains.
+                    Inspired by pattern matching in Rust and Haskell.</p>
+
+                <h2>5.1 Basic Syntax</h2>
+
+                <pre>
+<span style="color:#808080;">-- Syntax</span>
+match(value, {
+    [pattern1] = result1,
+    [pattern2] = result2,
+    [<b>_default()</b>] = fallback_result
+})
+</pre>
+
+                <h2>5.2 Numeric Matching</h2>
+
+                <pre>
+local health = 75
+
+local status = match(health, {
+    [<b>_lt(0)</b>] = "dead",
+    [0] = "dead",
+    [<b>_between(1, 25)</b>] = "critical",
+    [<b>_between(26, 50)</b>] = "wounded",
+    [<b>_between(51, 99)</b>] = "fine",
+    [<b>_default()</b>] = "perfect"
+})
+
+print(status) <span style="color:#808080;">-- "fine"</span>
+</pre>
+
+                <h2>5.3 String Matching</h2>
+
+                <pre>
+local command = "jump"
+
+match(command, {
+    ["walk"] = function() print("Walking...") end,
+    ["jump"] = function() print("Jumping!") end,
+    ["run"] = function() print("Running!") end,
+    [<b>_default()</b>] = function() print("Idle") end
+})
+</pre>
+
+                <h2>5.4 Match Markers Reference</h2>
+
+                <table class="features">
+                    <tr>
+                        <th width="150">Marker</th>
+                        <th>Description</th>
+                        <th width="180">Example</th>
+                    </tr>
+                    <tr>
+                        <td><code>_lt(n)</code></td>
+                        <td>Matches if value &lt; n</td>
+                        <td><code>[_lt(0)] = "negative"</code></td>
+                    </tr>
+                    <tr class="alt">
+                        <td><code>_between(a, b)</code></td>
+                        <td>Matches if a &le; value &le; b</td>
+                        <td><code>[_between(1, 10)] = "small"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>_default()</code></td>
+                        <td>Fallback when nothing matches</td>
+                        <td><code>[_default()] = "other"</code></td>
+                    </tr>
+                    <tr class="alt">
+                        <td><i>exact value</i></td>
+                        <td>Matches exact value</td>
+                        <td><code>[42] = "answer"</code></td>
+                    </tr>
+                </table>
+
+                <div class="note">
+                    <b>Note:</b> Markers currently work with integers in range -100 to 100. This covers most game use
+                    cases
+                    (health, scores, levels, states).
+                </div>
+
+                <!-- ============================================================ -->
+                <h1 id="http">6. HTTP Client</h1>
+
+                <p>Luelite includes a built-in HTTP client for direct API access. No external dependencies required.</p>
+
+                <h2>6.1 http.get()</h2>
+
+                <pre>
+local body, err = http.get("http://example.com")
+
+if body then
+    print("Response: " .. #body .. " bytes")
+    print(body:sub(1, 100))
+else
+    print("Error: " .. err)
+end
+</pre>
+
+                <h2>6.2 Ollama Integration</h2>
+
+                <pre>
+<span style="color:#808080;">-- Check if Ollama is running</span>
+local response, err = http.get("http://localhost:11434/api/tags")
+
+if response then
+    print("Ollama is online!")
+    <span style="color:#808080;">-- Parse response...</span>
+else
+    print("Ollama not available")
+end
+</pre>
+
+                <div class="warning">
+                    <b>Important:</b> <code>http.post</code> is not yet implemented. Coming in 0.2.0 for full Ollama API
+                    support.
+                </div>
+
+                <!-- ============================================================ -->
+                <h1 id="ecosystem">7. The Retrelite Ecosystem</h1>
+
+                <p>Luelite is part of a larger vision:</p>
+
+                <table class="features">
+                    <tr>
+                        <th width="180">Component</th>
+                        <th width="200">Name</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>Language</td>
+                        <td><b>Luelite</b></td>
+                        <td>A Lua fork for game development</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>3D Engine</td>
+                        <td><b>Retrelite</b></td>
+                        <td>Game engine in the spirit of 2006 Roblox</td>
+                    </tr>
+                    <tr>
+                        <td>IDE</td>
+                        <td><b>Retrelite Studio</b></td>
+                        <td>Built-in IDE with Ollama AI assistant</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>2D Tools</td>
+                        <td><b>LitePaint / LiteMotion</b></td>
+                        <td>Drawing and frame animation tools</td>
+                    </tr>
+                </table>
+
+                <p><b>Philosophy:</b> Retro aesthetics, modern ideas. Local-first, AI-powered, solo-developer friendly.
+                </p>
+
+                <!-- ============================================================ -->
+                <h1>8. Complete Example</h1>
+
+                <p>A script that uses all Luelite features together:</p>
+
+                <pre>
+<span style="color:#808080;">-- combo_test.luelite</span>
+io.stdout:setvbuf("no")
+
+print("=== LUELITE COMBO TEST ===\n")
+print("Tick: " .. tick())
+
+<span style="color:#808080;">-- Multitasking</span>
+spawn(function()
+    for i = 1, 3 do
+        print("  [BG] " .. i)
+        wait(0.3)
+    end
+    print("  [BG] done!")
+end)
+
+spawn(function()
+    wait(0.15)
+    print("  [Fast] done!")
+end)
+
+for i = 1, 2 do
+    print("  [Main] " .. i)
+    wait(0.2)
+end
+wait(1.2)
+
+<span style="color:#808080;">-- Delay</span>
+delay(0.3, function() print("  [Delay 0.3] fired!") end)
+delay(0.1, function() print("  [Delay 0.1] fired!") end)
+wait(0.5)
+
+<span style="color:#808080;">-- Match</span>
+local hp = 75
+local status = match(hp, {
+    [_lt(0)] = "dead",
+    [0] = "dead",
+    [_between(1, 25)] = "critical",
+    [_between(26, 50)] = "wounded",
+    [_between(51, 99)] = "fine",
+    [_default()] = "perfect"
+})
+print("HP: " .. hp .. " -> " .. status)
+
+match("attack", {
+    ["idle"] = function() print("State: standing") end,
+    ["attack"] = function() print("State: attacking!") end,
+    [_default()] = function() print("State: unknown") end
+})
+
+<span style="color:#808080;">-- HTTP</span>
+local body, err = http.get("http://example.com")
+if body then
+    print("HTTP: online (" .. #body .. " bytes)")
+else
+    print("HTTP: offline")
+end
+
+print("\nFinal tick: " .. tick())
+print("=== ALL TESTS PASSED ===")
+</pre>
+
+                <!-- ============================================================ -->
+                <h1 id="changelog">9. Changelog</h1>
+
+                <h2>v0.1.0 (Prototype) — Current</h2>
+                <table class="features">
+                    <tr>
+                        <th width="80">Type</th>
+                        <th>Item</th>
+                    </tr>
+                    <tr>
+                        <td>Added</td>
+                        <td>Cooperative multitasking: <code>wait()</code>, <code>spawn()</code>, <code>tick()</code>
+                        </td>
+                    </tr>
+                    <tr class="alt">
+                        <td>Added</td>
+                        <td>Pattern matching: <code>match()</code> with <code>_lt()</code>, <code>_between()</code>,
+                            <code>_default()</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Added</td>
+                        <td>HTTP client: <code>http.get()</code></td>
+                    </tr>
+                    <tr class="alt">
+                        <td>Added</td>
+                        <td>Lua-based <code>delay()</code> function</td>
+                    </tr>
+                    <tr>
+                        <td>Added</td>
+                        <td><code>.luelite</code> file extension support</td>
+                    </tr>
+                </table>
+
+                <h2>v0.2.0 — Planned</h2>
+                <table class="features">
+                    <tr>
+                        <th width="80">Type</th>
+                        <th>Item</th>
+                    </tr>
+                    <tr>
+                        <td>Planned</td>
+                        <td><code>vector3</code> type with operators</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>Planned</td>
+                        <td>Signal/Event system</td>
+                    </tr>
+                    <tr>
+                        <td>Planned</td>
+                        <td><code>http.post()</code> for Ollama API</td>
+                    </tr>
+                    <tr class="alt">
+                        <td>Planned</td>
+                        <td><code>print_r()</code> recursive table printer</td>
+                    </tr>
+                    <tr>
+                        <td>Planned</td>
+                        <td>Interactive REPL mode</td>
+                    </tr>
+                </table>
+
+                <hr>
+
+                <p style="text-align: center;">
+                    <b>Luelite 0.1</b> — Part of the <b>Retrelite</b> ecosystem<br>
+                    Made with &lt;3 in the spirit of 2006
+                </p>
+
+            </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+            <td class="footer">
+                &copy; 2024 Elite | Luelite 0.1.0 |
+                <a href="https://github.com/yourname/luelite">GitHub</a> |
+                Best viewed in 800x600 |
+                <img src="https://blob.gifcities.org/gifcities/2M7F665MUEJJA45S5HFWJRLLTFGEY3ZL.gif" alt="disk"
+                    width="16" height="16">
+                Best viewed in 800x600
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

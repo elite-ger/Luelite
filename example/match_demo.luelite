@@ -1,0 +1,29 @@
+print("=== Match Demo ===\n")
+
+-- match: pattern matching (replacing if/elseif/else)
+local x = 42
+print(x .. " -> " .. match(x, {
+    [_lt(0)] = "negative",
+    [0] = "zero",
+    [_between(1, 25)] = "small",
+    [_between(26, 75)] = "medium",
+    [_default()] = "large"
+}))
+
+-- Strings
+local cmd = "save"
+match(cmd, {
+    ["open"] = function() print("Opening file...") end,
+    ["save"] = function() print("Saving file...") end,
+    ["exit"] = function() print("Goodbye!") end,
+    [_default()] = function() print("Unknown command") end
+})
+
+-- Return
+local level = 12
+local title = match(level, {
+    [_lt(5)] = "Beginner",
+    [_between(5, 15)] = "Intermediate",
+    [_default()] = "Expert"
+})
+print("Level " .. level .. ": " .. title)

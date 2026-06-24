@@ -1,0 +1,36 @@
+print("=== State Machine ===\n")
+
+local running = true
+local state = "idle"
+
+local function setState(new)
+    state = new
+    match(state, {
+        ["idle"] = function()
+            print("Entering idle...")
+        end,
+        ["walk"] = function()
+            print("Walking...")
+        end,
+        ["run"] = function()
+            print("Running!")
+        end,
+    })
+end
+
+-- Main loop without recursion
+spawn(function()
+    local steps = {"idle", "walk", "run", "idle"}
+    for _, s in ipairs(steps) do
+        setState(s)
+        wait(0.8)
+    end
+    running = false
+end)
+
+-- Waiting for completion
+while running do
+    wait(0.1)
+end
+
+print("Done!")

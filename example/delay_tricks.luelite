@@ -1,0 +1,21 @@
+print("=== Delay Tricks ===\n")
+
+delay(0.1, function() print("First!") end)
+delay(0.5, function() print("Third.") end)
+delay(0.3, function() print("Second.") end)
+
+delay(0.0, function()
+    print("Starting chain...")
+    delay(0.2, function()
+        print("Step 1")
+        delay(0.2, function()
+            print("Step 2")
+            delay(0.2, function()
+                print("Step 3 - done!")
+            end)
+        end)
+    end)
+end)
+
+wait(2)
+print("All delays fired!")

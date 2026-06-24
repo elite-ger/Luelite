@@ -1,0 +1,23 @@
+print("=== Multitasking Demo ===\n")
+
+-- spawn: launching a function in a new thread
+spawn(function()
+    for i = 1, 3 do
+        print("  [Background] tick " .. i)
+        wait(0.4)  -- wait: suspension of coroutine
+    end
+    print("  [Background] done!")
+end)
+
+spawn(function()
+    wait(0.2)
+    print("  [Quick] finished early!")
+end)
+
+for i = 1, 3 do
+    print("[Main] step " .. i)
+    wait(0.3)
+end
+
+wait(1.5)
+print("\nAll tasks complete!")
