@@ -1,3 +1,5 @@
+# I just did it for the experience, it's not planned for serious purposes. 
+
 # Luelite 0.1
 
 A custom fork of Lua 5.5 designed for retro-style game development.
