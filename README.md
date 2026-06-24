@@ -1,3 +1,5 @@
+# I just did it for the experience, it's not planned for serious purposes. 
+
 # Luelite 0.1
 
 A custom fork of Lua 5.5 designed for retro-style game development.
@@ -66,8 +68,9 @@ Associate .luelite files
 Documentation
 See docs.html for full documentation with examples.
 
-License
-MIT License
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 Author
 Elite Ger
