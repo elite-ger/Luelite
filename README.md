@@ -48,12 +48,13 @@ local body = http.get("http://example.com")
 print("Got " .. #body .. " bytes")
 ```
 Building
-bash
+```bash
 git clone https://github.com/elite-ger/Luelite.git
 cd luelite
 mkdir build && cd build
 cmake .. -G "MinGW Makefiles"
 make
+```
 Requires Lua 5.5 source in src/lua-5.5.0/.
 
 Installation
